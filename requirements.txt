@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-google-genai
+langchain-community
+requests
+beautifulsoup4
+python-dotenv
+pubmed-lookup
+langgraph
