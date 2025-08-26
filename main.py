@@ -10,6 +10,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 
 # Import the compiled LangGraph app from your agent.py file
 from agent import app as article_agent_app
@@ -40,6 +41,15 @@ app = FastAPI(
     description="An API that uses a LangGraph agent to retrieve and analyze scientific articles from a URL, handling paywalls by searching open-access sources.",
     version="1.0.0",
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"], # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"], # Allows all headers
+)
+
 
 # --- API Endpoint Definition ---
 
