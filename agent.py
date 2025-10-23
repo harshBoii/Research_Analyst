@@ -10,7 +10,7 @@ import os
 import re
 from typing import TypedDict, Optional, List
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate  
 from langgraph.graph import StateGraph, END
 from langchain_community.document_loaders import PubMedLoader
 import requests
